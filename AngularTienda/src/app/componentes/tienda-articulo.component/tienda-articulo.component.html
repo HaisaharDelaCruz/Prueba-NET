@@ -1,0 +1,41 @@
+<div class="asignacion-container">
+  <h3>Asignar Artículo a Tienda</h3>
+
+  <form (ngSubmit)="asignar()" class="asignacion-form">
+    <label>
+      Tienda:
+      <select [(ngModel)]="tiendaId" name="tiendaId" required>
+        <option [value]="0" disabled selected>Selecciona una tienda</option>
+        <option *ngFor="let tienda of tiendas" [value]="tienda.id">{{ tienda.sucursal }}</option>
+      </select>
+    </label>
+
+    <label>
+      Artículo:
+      <select [(ngModel)]="articuloId" name="articuloId" required>
+        <option [value]="0" disabled selected>Selecciona un artículo</option>
+        <option *ngFor="let articulo of articulos" [value]="articulo.id">{{ articulo.codigo }}</option>
+      </select>
+    </label>
+
+    <button type="submit" [disabled]="tiendaId === 0 || articuloId === 0">Asignar</button>
+  </form>
+
+  <h3>Relaciones actuales</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Tienda</th>
+      <th>Artículo</th>
+      <th>Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of tiendaArticuloDTO">
+      <td>{{ item.nombreTienda }}</td>
+      <td>{{ item.nombreArticulo }}</td>
+      <td>${{ item.precio }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

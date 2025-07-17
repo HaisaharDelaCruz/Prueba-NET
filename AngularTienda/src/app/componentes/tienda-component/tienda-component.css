@@ -1,0 +1,66 @@
+.tienda-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffffff;
+}
+
+h2, h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.tienda-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tienda-table th,
+.tienda-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tienda-table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.tienda-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.mensaje-vacio {
+  font-style: italic;
+  color: #999;
+}
+
+.formulario-tienda {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.formulario-tienda input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formulario-tienda button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.formulario-tienda button:hover {
+  background-color: #3730a3;
+}

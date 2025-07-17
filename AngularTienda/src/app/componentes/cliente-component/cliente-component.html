@@ -1,0 +1,36 @@
+<div class="cliente-container">
+  <h2>Listado de Clientes</h2>
+
+  <table class="cliente-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Dirección</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.apellido }}</td>
+        <td>{{ cliente.direccion }}</td>
+        <td>
+          <button (click)="cargarFormulario(cliente)">Editar</button>
+          <button (click)="eliminarCliente(cliente.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<h3>{{ nuevoClientes.id === 0 ? 'Crear nuevo cliente' : 'Editar cliente' }} </h3>
+<form [formGroup]="clienteForm" (ngSubmit)="nuevoClientes.id === 0 ? crearCliente() : editarCliente()" class="cliente-form">    
+    <input type="text" formControlName="nombre" placeholder="Nombre" />
+    <input type="text" formControlName="apellido" placeholder="Apellidos" />
+    <input type="text" formControlName="direccion" placeholder="Dirección" />
+    <input type="text" formControlName="correo" placeholder="Correo electrónico" />
+    <input type="password" formControlName="contrasena" placeholder="Contraseña" />
+    <button type="submit">{{ nuevoClientes.id === 0 ? 'Crear' : 'Actualizar' }}</button>
+    <button type="button" (click)="resetFormulario()" *ngIf="nuevoClientes.id !== 0">Cancelar</button>
+  </form>
+</div>

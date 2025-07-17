@@ -1,0 +1,49 @@
+.asignacion-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.asignacion-container h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.asignacion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.asignacion-form label {
+  font-size: 14px;
+  color: #555;
+}
+
+.asignacion-form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.asignacion-form button {
+  padding: 10px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.asignacion-form button:hover {
+  background-color: #3730a3;
+}

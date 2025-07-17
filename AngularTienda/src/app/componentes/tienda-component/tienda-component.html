@@ -1,0 +1,35 @@
+<div class="tienda-container">
+  <h2>Listado de Tiendas</h2>
+
+  <table class="tienda-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Sucursal</th>
+        <th>Dirección</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tienda of tiendas">
+        <td>{{ tienda.id }}</td>
+        <td>{{ tienda.sucursal }}</td>
+        <td>{{ tienda.direccion }}</td>
+        <td>
+          <button (click)="cargarFormulario(tienda)">Editar</button>
+          <button (click)="eliminarTienda(tienda.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="tiendas.length === 0" class="mensaje-vacio">No hay tiendas disponibles.</p>
+
+  <h3>{{ nuevaTienda.id === 0 ? 'Crear nueva tienda' : 'Editar tienda' }}</h3>
+  <form (ngSubmit)="nuevaTienda.id === 0 ? crearTienda() : editarTienda()" class="formulario-tienda">
+    <input [(ngModel)]="nuevaTienda.sucursal" name="sucursal" placeholder="Sucursal" required />
+    <input [(ngModel)]="nuevaTienda.direccion" name="direccion" placeholder="Dirección" required />
+    <button type="submit">{{ nuevaTienda.id === 0 ? 'Crear' : 'Actualizar' }}</button>
+    <button type="button" (click)="resetFormulario()" *ngIf="nuevaTienda.id !== 0">Cancelar</button>
+  </form>
+</div>

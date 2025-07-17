@@ -1,0 +1,45 @@
+<div class="articulo-container">
+  <h2>{{ articuloForm.value.id === 0 ? 'Crear nuevo artículo' : 'Editar artículo' }}</h2>
+
+  <form [formGroup]="articuloForm" (ngSubmit)="guardar()" class="articulo-form">
+    <input formControlName="codigo" placeholder="Nombre" required>
+    <input formControlName="descripcion" placeholder="Descripción">
+    <input formControlName="precio" type="number" placeholder="Precio" required>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*">
+    <input formControlName="stock" type="number" placeholder="Stock">
+
+    <div class="form-buttons">
+      <button type="submit">{{ articuloForm.value.id === 0 ? 'Crear' : 'Actualizar' }}</button>
+      <button type="button" (click)="resetFormulario()">Cancelar</button>
+    </div>
+  </form>
+
+  <hr>
+
+  <h2>Lista de Artículos</h2>
+  <table class="articulo-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+        <th>Stock</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulo of articulos">
+        <td>{{ articulo.codigo }}</td>
+        <td>{{ articulo.descripcion }}</td>
+        <td>${{ articulo.precio }}</td>
+        <td><img *ngIf="articulo.imagenBase64" [src]="articulo.imagenBase64" class="thumb" alt="imagen" /></td>
+        <td>{{ articulo.stock }}</td>
+        <td>
+          <button (click)="cargarFormulario(articulo)">Editar</button>
+          <button (click)="eliminar(articulo.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

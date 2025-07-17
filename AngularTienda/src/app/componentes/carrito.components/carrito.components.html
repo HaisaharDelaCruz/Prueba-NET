@@ -1,0 +1,46 @@
+<div class="contenedor-carrito">
+  <h2>Artículos Disponibles</h2>
+  <ul class="lista-articulos">
+    <li *ngFor="let articulo of articulos">
+      <div class="info-articulo">
+        <span>{{ articulo.codigo }}</span>
+        <span>Stock {{ articulo.stock }}</span>
+      </div>
+      <button (click)="agregar(articulo)">Agregar al carrito</button>
+    </li>
+  </ul>
+
+  <h2>Carrito</h2>
+  <ul class="lista-carrito">
+    <li *ngFor="let item of carrito">
+      <div class="info-articulo">
+        <span>{{ item.articulo.codigo }} x{{ item.cantidad }}</span>
+      </div>
+      <button (click)="quitar(item.articulo)">Quitar</button>
+    </li>
+  </ul>
+
+  <button class="btn-comprar" (click)="comprar()" [disabled]="carrito.length === 0">
+    Finalizar compra
+  </button>
+
+  <h2>Mis Compras</h2>
+  <table *ngIf="compras.length > 0">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let compra of compras">
+        <td>{{ compra.codigo }}</td>
+        <td>{{ compra.descripcion }}</td>
+        <td>${{ compra.precio }}</td>
+        <td>{{ compra.fecha | date:'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
