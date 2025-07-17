@@ -21,7 +21,7 @@ update-database
 ```
 
 Al hacer el update, podremos ejecutar de manera tradicional la aplicación.
-Para iniciar Angular irémos a la carpeta AngularTienda y ejecutaremos el siguiente comando.
+Para iniciar Angular iremos a la carpeta AngularTienda y ejecutaremos el siguiente comando.
 
 ```
 ng serve
@@ -32,7 +32,7 @@ http://localhost:64372
 los datos de acceso son:
 Usuario:
 Luis
-Constraseña:
+Contraseña:
 123
 
 
