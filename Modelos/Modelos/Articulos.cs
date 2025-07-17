@@ -13,7 +13,7 @@ namespace Modelos.Modelos
         public string Codigo { get; set; }
         public string Descripcion { get; set; }
         public float Precio { get; set; }
-        public byte[] Imagen { get; set; }
+        public byte[]? Imagen { get; set; }
         public int Stock { get; set; }
 
         public List<ClienteArticulo> ClienteArticulos { get; set; } = new List<ClienteArticulo>();

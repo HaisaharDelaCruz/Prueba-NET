@@ -20,7 +20,7 @@ namespace Datos.Migrations
                     Codigo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Precio = table.Column<float>(type: "real", nullable: false),
-                    Imagen = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    Imagen = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     Stock = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

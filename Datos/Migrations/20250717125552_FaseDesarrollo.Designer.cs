@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250717110516_FaseDesarrollo")]
+    [Migration("20250717125552_FaseDesarrollo")]
     partial class FaseDesarrollo
     {
         /// <inheritdoc />
@@ -42,7 +42,6 @@ namespace Datos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("Imagen")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<float>("Precio")

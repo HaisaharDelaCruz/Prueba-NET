@@ -39,7 +39,6 @@ namespace Datos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("Imagen")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<float>("Precio")
